@@ -1,9 +1,9 @@
-// const staticPagesExportMap = require('./scripts/pages-export')
+const staticPagesExportMap = require('./scripts/pages-export')
 
 const nextConfig = {
-  // exportPathMap() {
-  //   return staticPagesExportMap()
-  // },
+  exportPathMap() {
+    return staticPagesExportMap()
+  },
 }
 
 module.exports = nextConfig

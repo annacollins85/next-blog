@@ -5,10 +5,15 @@ class BlogPost extends Entry {
     return this.fields.title
   }
 
+  get slug() {
+    return this.fields.slug
+  }
+
   toJSON() {
     return {
       contentType: super.contentType,
       title: this.title,
+      slug: this.slug,
     }
   }
 }
