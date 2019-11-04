@@ -1,19 +1,15 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-import { withRouter } from 'next/router'
 import Head from 'next/head'
 
 import NotFound from '../components/not-found'
 
-class Home extends Component {
-  static propTypes = {
-    router: PropTypes.object.isRequired,
+class BlogPost extends Component {
+  static getInitialProps({ query }) {
+    return query
   }
 
   render() {
-    const { __pageContent } = this.props.router.query
-
-    console.log(this.props.router)
+    const { __pageContent } = this.props
 
     if (!__pageContent) {
       return <NotFound />
@@ -22,7 +18,7 @@ class Home extends Component {
     return (
       <div>
         <Head>
-          <title>Home</title>
+          <title>BlogPost</title>
         </Head>
         HOLA
       </div>
@@ -30,4 +26,4 @@ class Home extends Component {
   }
 }
 
-export default withRouter(Home)
+export default BlogPost
