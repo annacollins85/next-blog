@@ -33,7 +33,7 @@ const staticPagesExportMap = () => {
       ...staticPages,
       ...formatExportMap({
         page: '/blog-post',
-        path: `/${blogPost.slug}`,
+        path: `/blog/${blogPost.slug}`,
         query: {
           __pageContent: blogPost,
         },
