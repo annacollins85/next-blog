@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "node contentful-data/get-content.js && next build",
     "export": "next export",
-    "start": "next start"
+    "start": "next start",
+    "deploy": "yarn build && yarn export"
   },
   "dependencies": {
     "contentful": "^7.10.0",
