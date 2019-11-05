@@ -6,7 +6,7 @@
     "dev": "next dev",
     "build": "node contentful-data/get-content.js && next build",
     "export": "next export",
-    "start": "node server",
+    "start": "node ./server/index.js",
     "deploy": "yarn build && yarn export",
     "heroku-postbuild": "yarn"
   },
