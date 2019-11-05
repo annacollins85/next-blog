@@ -6,8 +6,9 @@
     "dev": "next dev",
     "build": "node contentful-data/get-content.js && next build",
     "export": "next export",
-    "start": "next start",
-    "deploy": "yarn build && yarn export"
+    "start": "node server",
+    "deploy": "yarn build && yarn export",
+    "heroku-postbuild": "yarn run build"
   },
   "dependencies": {
     "contentful": "^7.10.0",
