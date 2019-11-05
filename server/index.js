@@ -7,13 +7,34 @@ const { contentfulService } = require('./contentful-service')
 
 const dev = process.env.NODE_ENV !== 'production'
 
+const port = process.env.PORT || 3000
+
 const app = next({ dev })
 const handle = app.getRequestHandler()
+
+const contentfulWebhookHandle = async (req, res) => {
+  // Validate that the webhook contains the required secret header
+  if (
+    req.header('webhook-verification') ===
+    process.env.CONTENTFUL_PREVIEW_WEBHOOK_SECRET
+  ) {
+    await contentfulService.refreshPages()
+    res.status(200)
+    res.send()
+  } else {
+    res.status(500)
+    res.send()
+  }
+}
 
 app
   .prepare()
   .then(async () => {
     const server = express()
+
+    // Allow content modifications in Contentful to reset preview server in Now
+    // (used to test authoring changes)
+    server.post('/webhooks/contentful', contentfulWebhookHandle)
 
     server.get('/blog/:slug', async (req, res) => {
       const pageContent = await contentfulService.getPageContent({
@@ -40,9 +61,9 @@ app
       return handle(req, res)
     })
 
-    server.listen(3000, err => {
+    server.listen(port, err => {
       if (err) throw err
-      console.log('> Ready on http://localhost:3000')
+      console.log('> Ready on http://localhoport')
     })
   })
   .catch(ex => {
