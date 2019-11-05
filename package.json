@@ -5,10 +5,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "node contentful-data/get-content.js && next build",
-    "export": "next export",
-    "start": "node server",
+    "export": "next deploy",
+    "start": "yarn server",
     "deploy": "yarn build && yarn export",
-    "heroku-postbuild": "yarn run build"
+    "heroku-postbuild": "yarn"
   },
   "dependencies": {
     "contentful": "^7.10.0",
