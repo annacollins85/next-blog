@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "node contentful-data/get-content.js && next build",
-    "export": "next deploy",
+    "export": "next export",
     "start": "node server",
     "deploy": "yarn build && yarn export",
     "heroku-postbuild": "yarn"
