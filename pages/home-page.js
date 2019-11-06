@@ -15,11 +15,14 @@ class Home extends Component {
       return <NotFound />
     }
 
+    const { title } = __pageContent
+
     return (
       <div>
         <Head>
           <title>Home</title>
         </Head>
+        {title}
         HOLA
       </div>
     )
