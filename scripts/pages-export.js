@@ -16,7 +16,7 @@ const staticPagesExportMap = () => {
       page: '/home-page',
       path: '/',
       query: {
-        __pageContent: homePage,
+        __pageContent: homePage[0],
       },
     }),
     ...formatExportMap({

@@ -41,13 +41,8 @@ class ContentfulService {
     return this[contentType]
   }
 
-  async getBlogPosts() {
-    const blogPosts = await this.getContent('blogPosts')
-    return blogPosts
-  }
-
   async getBlogPost(slug) {
-    const blogPosts = await this.getBlogPosts()
+    const blogPosts = await this.getContent('blogPosts')
     return blogPosts.find(el => el.slug === slug)
   }
 

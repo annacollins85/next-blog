@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
 
 import NotFound from '../components/not-found'
+import HomeHero from '../components/home-hero'
 
 class Home extends Component {
   static getInitialProps({ query }) {
@@ -15,15 +15,12 @@ class Home extends Component {
       return <NotFound />
     }
 
-    const { title } = __pageContent
+    const { intro, image, blogPosts } = __pageContent
 
     return (
       <div>
-        <Head>
-          <title>Home</title>
-        </Head>
-        {title}
-        HOLA
+        <HomeHero intro={intro} image={image} />
+        {/* <BlogPostsSection blogPosts={blogPosts} /> */}
       </div>
     )
   }

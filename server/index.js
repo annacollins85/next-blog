@@ -32,8 +32,7 @@ app
   .then(async () => {
     const server = express()
 
-    // Allow content modifications in Contentful to reset preview server in Now
-    // (used to test authoring changes)
+    // Allow content modifications in Contentful to reset preview server for authoring environment
     server.post('/webhooks/contentful', contentfulWebhookHandle)
 
     server.get('/blog/:slug', async (req, res) => {
@@ -63,7 +62,7 @@ app
 
     server.listen(port, err => {
       if (err) throw err
-      console.log('> Ready on http://localhoport')
+      console.log('> Ready on http://localhost:3000')
     })
   })
   .catch(ex => {
