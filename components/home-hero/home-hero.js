@@ -1,18 +1,34 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
+import Typewriter from 'typewriter-effect'
 
-import { HomeHeroContainer } from './styled-components'
+import {
+  HomeHeroBackground,
+  ContentContainer,
+  Avatar,
+  IntroHeading,
+} from './styled-components'
 
-const HomeHero = ({ intro, image }) => (
-  <HomeHeroContainer>
-    <div>HOLA</div>
-    {/* <img src={image.url}></img> */}
-  </HomeHeroContainer>
+const HomeHero = ({ intro, mainImage }) => (
+  <HomeHeroBackground>
+    <ContentContainer>
+      <Avatar alt={mainImage.title} src={mainImage.url}></Avatar>
+      <IntroHeading>
+        <Typewriter
+          options={{
+            strings: [intro],
+            autoStart: true,
+            loop: true,
+          }}
+        />
+      </IntroHeading>
+    </ContentContainer>
+  </HomeHeroBackground>
 )
 
 HomeHero.propTypes = {
   intro: PropTypes.string.isRequired,
-  image: PropTypes.shape({
+  mainImage: PropTypes.shape({
     url: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
   }),

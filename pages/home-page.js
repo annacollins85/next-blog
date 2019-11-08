@@ -15,11 +15,11 @@ class Home extends Component {
       return <NotFound />
     }
 
-    const { intro, image, blogPosts } = __pageContent
+    const { intro, mainImage, blogPosts } = __pageContent
 
     return (
       <div>
-        <HomeHero intro={intro} image={image} />
+        <HomeHero intro={intro} mainImage={mainImage} />
         {/* <BlogPostsSection blogPosts={blogPosts} /> */}
       </div>
     )
