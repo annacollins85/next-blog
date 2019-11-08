@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import NotFound from '../components/not-found'
 import HomeHero from '../components/home-hero'
+import BlogPostsSection from '../components/blog-posts-section'
 
 class Home extends Component {
   static getInitialProps({ query }) {
@@ -20,7 +21,7 @@ class Home extends Component {
     return (
       <div>
         <HomeHero intro={intro} mainImage={mainImage} />
-        {/* <BlogPostsSection blogPosts={blogPosts} /> */}
+        <BlogPostsSection blogPosts={blogPosts} />
       </div>
     )
   }
