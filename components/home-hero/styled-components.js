@@ -22,10 +22,12 @@ export const ContentContainer = styled.div`
 
 export const IntroHeading = styled.h1`
   width: 320px;
-  padding: ${4 * GRID_UNIT}px ${2 * GRID_UNIT}px ${2 * GRID_UNIT}px;
+  padding: ${4 * GRID_UNIT}px ${GRID_UNIT}px ${2 * GRID_UNIT}px;
+  text-align: center;
 
   @media screen and (min-width: ${BREAKPOINTS.md}px) {
     padding: 0 0 0 ${4 * GRID_UNIT}px;
+    text-align: left;
   }
 `
 
