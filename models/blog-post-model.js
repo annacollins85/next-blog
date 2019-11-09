@@ -2,6 +2,9 @@ const Entry = require('./entry-model')
 const Image = require('./image-model')
 const RichText = require('./rich-text-model')
 
+const {
+  documentToPlainTextString,
+} = require('@contentful/rich-text-plain-text-renderer')
 const readingTime = require('reading-time')
 const formatDate = require('../utils/date-formatter')
 
@@ -14,8 +17,16 @@ class BlogPost extends Entry {
     return this.fields.slug
   }
 
+  get color() {
+    return this.fields.color
+  }
+
   get releaseDate() {
     return this.fields.releaseDate ? formatDate(this.fields.releaseDate) : ''
+  }
+
+  get subtitle() {
+    return this.fields.subtitle
   }
 
   get image() {
@@ -37,7 +48,9 @@ class BlogPost extends Entry {
       contentType: super.contentType,
       title: this.title,
       slug: this.slug,
+      color: this.color,
       releaseDate: this.releaseDate,
+      subtitle: this.subtitle,
       image: this.image,
       content: this.content,
       readTime: this.readTime,

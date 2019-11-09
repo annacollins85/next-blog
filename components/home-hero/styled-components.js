@@ -1,10 +1,6 @@
 import styled from 'styled-components'
 
-import {
-  GRID_UNIT,
-  BREAKPOINTS,
-  BACKGROUND_COLOR,
-} from '../../constants/design'
+import { GRID_UNIT, BREAKPOINTS } from '../../constants/design'
 
 export const HomeHeroBackground = styled.div`
   display: flex;

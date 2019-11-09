@@ -10,7 +10,7 @@ const componentMap = {
   dropCapParagraph: DropCap,
 }
 
-const renderBlocks = ({ blocks = [], router, color }) => {
+const renderBlocks = ({ blocks = [], color }) => {
   return blocks.map((block, index) => {
     const BlockComponent = componentMap[block.contentType] || MiscHtml
     return (
@@ -25,9 +25,10 @@ const renderBlocks = ({ blocks = [], router, color }) => {
 }
 
 const BlogPostContent = ({ content }) => {
+  const { blocks, color } = content
   return (
     <BlogPostContentContainer>
-      {renderBlocks({ blocks: content.blocks })}
+      {renderBlocks({ blocks: blocks, color: color })}
     </BlogPostContentContainer>
   )
 }

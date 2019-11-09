@@ -1,26 +1,24 @@
 import styled from 'styled-components'
 
-import { GRID_UNIT, TEXT_COLOR_PRIMARY } from '../../constants/design'
+import { GRID_UNIT } from '../../constants/design'
 
 export const BlogPostHeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 0 auto;
-  background-color: ${props => props.color};
 
   @media screen and (min-width: 768px) {
     flex-direction: row;
   }
 `
 
-export const BlogPostHeroImage = styled.a`
+export const BlogPostHeroImage = styled.div`
   position: absolute;
   display: flex;
   width: 100%;
   height: 100%;
-  background-image: ${props =>
-    props.image ? `url(${props.mobileImage || props.image})` : 'none'};
+  background-image: ${props => `url(${props.image})`};
   background-size: cover;
   background-position: 50% 25%;
 
@@ -33,7 +31,7 @@ export const ImageWrap = styled.div`
   position: relative;
   order: 1;
   width: 100vw;
-  min-height: 300px;
+  min-height: 65vh;
   height: auto;
   margin-right: auto;
 
@@ -90,26 +88,5 @@ export const BlogPostSubtitle = styled.p`
 
   @media screen and (min-width: 1024px) {
     max-width: 320px;
-  }
-`
-
-export const CategoryLink = styled.a`
-  display: block;
-  margin: 0 -${2 * GRID_UNIT}px ${3 * GRID_UNIT}px;
-  padding: ${GRID_UNIT}px ${2 * GRID_UNIT}px;
-  width: calc(100% + 32px);
-  color: ${TEXT_COLOR_PRIMARY};
-  background-color: ${props => props.color};
-  font-size: 24px;
-  font-weight: 700;
-
-  &:hover {
-    cursor: pointer;
-  }
-
-  @media screen and (min-width: 768px) {
-    display: inline-block;
-    margin: 0 0 ${3 * GRID_UNIT}px;
-    width: auto;
   }
 `

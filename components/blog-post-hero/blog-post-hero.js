@@ -13,26 +13,28 @@ import {
   BlogPostSubtitle,
 } from './styled-components'
 
-const BlogPostHero = ({ title, subtitle, mainImage, readTime }) => (
-  <BlogPostHeroContainer color={heroBackgroundColor}>
-    <InfoWrap>
-      <BlogPostHeroInfo>
-        <BlogPostTitle>{title}</BlogPostTitle>
-        <BlogPostSubtitle>{subtitle}</BlogPostSubtitle>
-        <ReadTime readTime={readTime.text} />
-      </BlogPostHeroInfo>
-    </InfoWrap>
-    <ImageWrap>
-      <BlogPostHeroImage image={mainImage.url} />
-    </ImageWrap>
-  </BlogPostHeroContainer>
-)
+const BlogPostHero = ({ title, subtitle, image, readTime, releaseDate }) =>
+  console.log({ image }) || (
+    <BlogPostHeroContainer>
+      <InfoWrap>
+        <BlogPostHeroInfo>
+          <BlogPostTitle>{title}</BlogPostTitle>
+          <BlogPostSubtitle>{subtitle}</BlogPostSubtitle>
+          <ReadTime readTime={readTime} />
+        </BlogPostHeroInfo>
+      </InfoWrap>
+      <ImageWrap>
+        <BlogPostHeroImage image={image.url} alt={image.title} />
+      </ImageWrap>
+    </BlogPostHeroContainer>
+  )
 
 BlogPostHero.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  mainImage: PropTypes.object.isRequired,
-  readTime: PropTypes.object.isRequired,
+  image: PropTypes.object.isRequired,
+  readTime: PropTypes.string.isRequired,
+  releaseDate: PropTypes.string.isRequired,
 }
 
 export default BlogPostHero

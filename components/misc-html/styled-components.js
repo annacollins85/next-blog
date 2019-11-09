@@ -5,7 +5,7 @@ import {
   BLOG_POST_SECTION_HORIZONTAL_PADDING,
   BLOG_POST_SECTION_VERTICAL_PADDING,
   BLOG_POST_SECTION_WIDTH,
-  TEXT_COLOR_PRIMARY,
+  LINK_COLOR_HOVER,
 } from '../../constants/design'
 
 export const ImageContainer = styled.div`
@@ -48,8 +48,7 @@ export const MiscHtmlContainer = styled.div`
 
   h2,
   h3 {
-    font-family: Apercu, -apple-system, BlinkMacSystemFont, Helvetica Neue,
-      sans-serif;
+    font-family: Helvetica Neue, sans-serif;
     font-weight: 500;
     line-height: 40px;
   }
@@ -90,7 +89,7 @@ export const MiscHtmlContainer = styled.div`
     &:hover {
       transition: 0.5s;
       background-color: ${props => props.color};
-      color: ${TEXT_COLOR_PRIMARY};
+      color: ${LINK_COLOR_HOVER};
     }
   }
 `

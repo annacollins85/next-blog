@@ -12,6 +12,9 @@
     "heroku-postbuild": "yarn && yarn build"
   },
   "dependencies": {
+    "@contentful/rich-text-plain-text-renderer": "^13.4.0",
+    "@contentful/rich-text-react-renderer": "^13.4.0",
+    "@contentful/rich-text-types": "^13.4.0",
     "contentful": "^7.10.0",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import Head from 'next/head'
 
 import NotFound from '../components/not-found'
+import BlogPostHero from '../components/blog-post-hero'
 
 class BlogPost extends Component {
   static getInitialProps({ query }) {
@@ -15,18 +15,25 @@ class BlogPost extends Component {
       return <NotFound />
     }
 
-    console.log({ __pageContent })
-
-    const { title } = __pageContent
+    const {
+      title,
+      releaseDate,
+      subtitle,
+      image,
+      content,
+      readTime,
+    } = __pageContent
 
     return (
-      <div>
-        <Head>
-          <title>BlogPost</title>
-        </Head>
-        {title}
-        HOLA
-      </div>
+      <>
+        <BlogPostHero
+          title={title}
+          subtitle={subtitle}
+          image={image}
+          readTime={readTime.text}
+          releaseDate={releaseDate}
+        />
+      </>
     )
   }
 }
