@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 import NotFound from '../components/not-found'
 import BlogPostHero from '../components/blog-post-hero'
+import BlogPostContent from '../components/blog-post-content/blog-post-content'
 
 class BlogPost extends Component {
   static getInitialProps({ query }) {
@@ -16,23 +17,25 @@ class BlogPost extends Component {
     }
 
     const {
-      title,
+      color,
+      content,
+      image,
+      readTime,
       releaseDate,
       subtitle,
-      image,
-      content,
-      readTime,
+      title,
     } = __pageContent
 
     return (
       <>
         <BlogPostHero
-          title={title}
-          subtitle={subtitle}
           image={image}
           readTime={readTime.text}
           releaseDate={releaseDate}
+          subtitle={subtitle}
+          title={title}
         />
+        <BlogPostContent color={color} content={content} />
       </>
     )
   }

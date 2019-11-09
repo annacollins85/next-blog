@@ -13,28 +13,21 @@ const componentMap = {
 const renderBlocks = ({ blocks = [], color }) => {
   return blocks.map((block, index) => {
     const BlockComponent = componentMap[block.contentType] || MiscHtml
-    return (
-      <BlockComponent
-        color={color}
-        content={block}
-        key={index}
-        router={router}
-      />
-    )
+    return <BlockComponent color={color} content={block} key={index} />
   })
 }
 
-const BlogPostContent = ({ content }) => {
-  const { blocks, color } = content
+const BlogPostContent = ({ content, color }) => {
   return (
     <BlogPostContentContainer>
-      {renderBlocks({ blocks: blocks, color: color })}
+      {renderBlocks({ blocks: content.blocks, color })}
     </BlogPostContentContainer>
   )
 }
 
 BlogPostContent.propTypes = {
   content: PropTypes.object.isRequired,
+  color: PropTypes.string.isRequired,
 }
 
 export default BlogPostContent

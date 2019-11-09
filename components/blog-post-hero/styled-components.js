@@ -90,3 +90,10 @@ export const BlogPostSubtitle = styled.p`
     max-width: 320px;
   }
 `
+
+export const ReleaseDate = styled.div`
+  text-align: right;
+  font-size: 14px;
+  font-weight: 600;
+  padding-bottom: ${2 * GRID_UNIT}px;
+`

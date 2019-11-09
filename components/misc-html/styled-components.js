@@ -15,7 +15,7 @@ export const ImageContainer = styled.div`
 `
 
 export const StyledImage = styled.img`
-  max-width: 100%;
+  width: 100%;
   text-align: right;
 
   @media screen and (min-width: 768px) {

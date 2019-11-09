@@ -11,23 +11,24 @@ import {
   BlogPostHeroInfo,
   BlogPostTitle,
   BlogPostSubtitle,
+  ReleaseDate,
 } from './styled-components'
 
-const BlogPostHero = ({ title, subtitle, image, readTime, releaseDate }) =>
-  console.log({ image }) || (
-    <BlogPostHeroContainer>
-      <InfoWrap>
-        <BlogPostHeroInfo>
-          <BlogPostTitle>{title}</BlogPostTitle>
-          <BlogPostSubtitle>{subtitle}</BlogPostSubtitle>
-          <ReadTime readTime={readTime} />
-        </BlogPostHeroInfo>
-      </InfoWrap>
-      <ImageWrap>
-        <BlogPostHeroImage image={image.url} alt={image.title} />
-      </ImageWrap>
-    </BlogPostHeroContainer>
-  )
+const BlogPostHero = ({ title, subtitle, image, readTime, releaseDate }) => (
+  <BlogPostHeroContainer>
+    <InfoWrap>
+      <BlogPostHeroInfo>
+        <BlogPostTitle>{title}</BlogPostTitle>
+        <BlogPostSubtitle>{subtitle}</BlogPostSubtitle>
+        <ReleaseDate>{releaseDate}</ReleaseDate>
+        <ReadTime readTime={readTime} />
+      </BlogPostHeroInfo>
+    </InfoWrap>
+    <ImageWrap>
+      <BlogPostHeroImage image={image.url} alt={image.title} />
+    </ImageWrap>
+  </BlogPostHeroContainer>
+)
 
 BlogPostHero.propTypes = {
   title: PropTypes.string.isRequired,
