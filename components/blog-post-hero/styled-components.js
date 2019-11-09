@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 import { GRID_UNIT, TEXT_COLOR_PRIMARY } from '../../constants/design'
 
-export const HighlightsHeroContainer = styled.div`
+export const BlogPostHeroContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -14,7 +14,7 @@ export const HighlightsHeroContainer = styled.div`
   }
 `
 
-export const HighlightsHeroImage = styled.a`
+export const BlogPostHeroImage = styled.a`
   position: absolute;
   display: flex;
   width: 100%;
@@ -53,7 +53,7 @@ export const InfoWrap = styled.div`
   }
 `
 
-export const HeroArticleInfo = styled.div`
+export const BlogPostHeroInfo = styled.div`
   width: 100%;
   padding: 0 ${2 * GRID_UNIT}px ${3 * GRID_UNIT}px;
   font-size: 72px;
@@ -71,7 +71,7 @@ export const HeroArticleInfo = styled.div`
   }
 `
 
-export const ArticleTitle = styled.h1`
+export const BlogPostTitle = styled.h1`
   font-size: 28px;
   font-weight: 600;
   line-height: 34px;
@@ -82,7 +82,7 @@ export const ArticleTitle = styled.h1`
   }
 `
 
-export const ArticleSubtitle = styled.p`
+export const BlogPostSubtitle = styled.p`
   max-width: 320px;
   font-family: 'Merriweather', serif;
   font-size: 16px;

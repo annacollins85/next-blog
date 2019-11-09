@@ -4,6 +4,7 @@ import {
   MAIN_COLOR,
   SELECTION_BACKGROUND,
   SELECTION_COLOR,
+  BACKGROUND_COLOR,
   GRID_UNIT,
 } from '../../constants/design'
 
@@ -35,7 +36,7 @@ const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.2;
     color: ${MAIN_COLOR};
-    background-color: #fff;
+    background-color: ${BACKGROUND_COLOR};
   }
 
   a {

@@ -1,61 +1,38 @@
 import React from 'react'
-import Link from 'next/link'
+import PropTypes from 'prop-types'
 
-import { HIGHLIGHTS_PAGE_SECTION_PROP_TYPES } from '../../constants/prop-types'
-import lightenHexColor from '../../utils/lighten-hex-color'
-import ReadTimeWithAuthor from '../read-time/read-time-with-author'
+import ReadTime from '../read-time'
 
 import {
-  HighlightsHeroContainer,
+  BlogPostHeroContainer,
   ImageWrap,
-  HighlightsHeroImage,
+  BlogPostHeroImage,
   InfoWrap,
-  HeroArticleInfo,
-  ArticleTitle,
-  ArticleSubtitle,
-  CategoryLink,
+  BlogPostHeroInfo,
+  BlogPostTitle,
+  BlogPostSubtitle,
 } from './styled-components'
 
-const HighlightsHero = ({ articles }) => {
-  const article = articles[0]
+const BlogPostHero = ({ title, subtitle, mainImage, readTime }) => (
+  <BlogPostHeroContainer color={heroBackgroundColor}>
+    <InfoWrap>
+      <BlogPostHeroInfo>
+        <BlogPostTitle>{title}</BlogPostTitle>
+        <BlogPostSubtitle>{subtitle}</BlogPostSubtitle>
+        <ReadTime readTime={readTime.text} />
+      </BlogPostHeroInfo>
+    </InfoWrap>
+    <ImageWrap>
+      <BlogPostHeroImage image={mainImage.url} />
+    </ImageWrap>
+  </BlogPostHeroContainer>
+)
 
-  const {
-    title,
-    subtitle,
-    slug,
-    mainImage,
-    category,
-    author,
-    readTime,
-  } = article
-
-  const heroBackgroundColor = lightenHexColor(category.color, 0.1)
-
-  return (
-    <HighlightsHeroContainer color={heroBackgroundColor}>
-      <InfoWrap>
-        <HeroArticleInfo>
-          <Link href={`/${category.slug}`}>
-            <CategoryLink color={category.color}>{category.name}</CategoryLink>
-          </Link>
-          <ArticleTitle>{title}</ArticleTitle>
-          <ArticleSubtitle>{subtitle}</ArticleSubtitle>
-          <ReadTimeWithAuthor
-            author={author.name}
-            authorSlug={author.slug}
-            readTime={readTime.text}
-          />
-        </HeroArticleInfo>
-      </InfoWrap>
-      <ImageWrap>
-        <Link href={`/${category.slug}/${slug}/`}>
-          <HighlightsHeroImage image={mainImage.url} />
-        </Link>
-      </ImageWrap>
-    </HighlightsHeroContainer>
-  )
+BlogPostHero.propTypes = {
+  title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string.isRequired,
+  mainImage: PropTypes.object.isRequired,
+  readTime: PropTypes.object.isRequired,
 }
 
-HighlightsHero.propTypes = HIGHLIGHTS_PAGE_SECTION_PROP_TYPES
-
-export default HighlightsHero
+export default BlogPostHero

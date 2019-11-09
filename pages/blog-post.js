@@ -15,6 +15,8 @@ class BlogPost extends Component {
       return <NotFound />
     }
 
+    console.log({ __pageContent })
+
     const { title } = __pageContent
 
     return (

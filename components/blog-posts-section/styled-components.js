@@ -2,37 +2,42 @@ import styled from 'styled-components'
 
 import {
   GRID_UNIT,
-  TEXT_COLOR_SECONDARY,
+  BREAKPOINTS,
+  BACKGROUND_COLOR,
   BOX_SHADOW_COLOR,
-  RELATED_ARTICLES_BACKGROUND_COLOR,
+} from '../../constants/design'
+
+import {
+  BLOG_POST_SECTION_HORIZONTAL_PADDING,
+  BLOG_POST_SECTION_WIDTH,
 } from '../../constants/design'
 
 export const BlogPostsSectionContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: ${8 * GRID_UNIT}px 0 ${8 * GRID_UNIT}px;
-  background-color: #f8f8f5;
+  margin: 0 auto;
+  padding: 0 ${BLOG_POST_SECTION_HORIZONTAL_PADDING}px;
+  max-width: ${BLOG_POST_SECTION_WIDTH}px;
+  min-height: 100vh;
 `
 
 export const BlogPostsSectionTitle = styled.h3`
   font-size: 24px;
-  text-align: center;
+  align-self: flex-start;
   line-height: 48px;
-  margin-bottom: ${4 * GRID_UNIT}px;
+  padding: ${4 * GRID_UNIT}px 0;
+  margin: 0;
 
-  @media screen and (min-width: 480px) {
+  @media screen and (min-width: ${BREAKPOINTS.md}px) {
     font-size: 28px;
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${BREAKPOINTS.md}px) {
     font-size: 32px;
   }
 `
 
 export const BlogPostCardsContainer = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   flex-wrap: wrap;
 `
@@ -42,8 +47,6 @@ export const BlogPostCardContainer = styled.a`
   flex-direction: column;
   width: 304px;
   min-height: 352px;
-  margin: ${2 * GRID_UNIT}px;
-  /* border-radius: 4px; */
   box-shadow: -6px 12px 50px -10px ${BOX_SHADOW_COLOR};
 
   &:hover {
@@ -56,7 +59,6 @@ export const BlogPostCardContainer = styled.a`
 
 export const BlogPostImage = styled.div`
   height: 50%;
-  /* border-radius: 4px 4px 0 0; */
   background-image: ${props => `url(${props.image})`};
   background-size: cover;
 `
@@ -74,5 +76,4 @@ export const BlogPostTitle = styled.div`
   margin: 0;
   padding: ${GRID_UNIT}px 0 ${2 * GRID_UNIT}px;
   line-height: 21px;
-  color: ${TEXT_COLOR_SECONDARY};
 `

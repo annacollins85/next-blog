@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 
 import BlogPostCard from './blog-post-card'
@@ -9,7 +10,7 @@ import {
 
 const BlogPost = ({ blogPosts }) => (
   <BlogPostsSectionContainer>
-    <BlogPostsSectionTitle>Liked that? Check these out:</BlogPostsSectionTitle>
+    <BlogPostsSectionTitle>Blog Posts ✍🏻</BlogPostsSectionTitle>
     <BlogPostCardsContainer>
       {blogPosts.map(post => (
         <BlogPostCard
