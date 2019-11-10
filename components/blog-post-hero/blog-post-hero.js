@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { IMAGE_PROP_TYPES } from '../../constants/prop-types'
+
 import ReadTime from '../read-time'
 
 import {
@@ -33,7 +35,7 @@ const BlogPostHero = ({ title, subtitle, image, readTime, releaseDate }) => (
 BlogPostHero.propTypes = {
   title: PropTypes.string.isRequired,
   subtitle: PropTypes.string.isRequired,
-  image: PropTypes.object.isRequired,
+  image: IMAGE_PROP_TYPES.isRequired,
   readTime: PropTypes.string.isRequired,
   releaseDate: PropTypes.string.isRequired,
 }

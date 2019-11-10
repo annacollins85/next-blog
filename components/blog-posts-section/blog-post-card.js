@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 
-// import ReadTimeWithAuthor from '../read-time/read-time-with-author'
+import ReadTime from '../read-time'
 
 import {
   BlogPostCardContainer,
@@ -11,14 +11,14 @@ import {
   BlogPostTitle,
 } from './styled-components'
 
-const BlogPostCard = ({ image, slug, title }) => {
+const BlogPostCard = ({ imageUrl, readTime, slug, title }) => {
   return (
     <Link href={`/blog/${slug}/`}>
       <BlogPostCardContainer>
-        <BlogPostImage image={image.url} />
+        <BlogPostImage image={imageUrl} />
         <BlogPostInfo>
           <BlogPostTitle>{title}</BlogPostTitle>
-          {/* <ReadTimeWithAuthor author={author} readTime={readTime} /> */}
+          <ReadTime readTime={readTime} />
         </BlogPostInfo>
       </BlogPostCardContainer>
     </Link>
@@ -26,7 +26,8 @@ const BlogPostCard = ({ image, slug, title }) => {
 }
 
 BlogPostCard.propTypes = {
-  image: PropTypes.object.isRequired,
+  imageUrl: PropTypes.string.isRequired,
+  readTime: PropTypes.string.isRequired,
   slug: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
 }

@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { IMAGE_PROP_TYPES } from '../../constants/prop-types'
+
 import BlogPostCard from './blog-post-card'
 import {
   BlogPostsSectionContainer,
@@ -14,9 +16,9 @@ const BlogPost = ({ blogPosts }) => (
     <BlogPostCardsContainer>
       {blogPosts.map(post => (
         <BlogPostCard
-          image={post.image}
+          imageUrl={post.image.url}
           key={post.slug}
-          // readTime={post.readTime}
+          readTime={post.readTime.text}
           slug={post.slug}
           title={post.title}
         />
@@ -26,7 +28,14 @@ const BlogPost = ({ blogPosts }) => (
 )
 
 BlogPost.propTypes = {
-  BlogPost: PropTypes.array,
+  BlogPost: PropTypes.shape({
+    image: IMAGE_PROP_TYPES,
+    readTime: PropTypes.shape({
+      text: PropTypes.string.isRequired,
+    }),
+    slug: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+  }),
 }
 
 export default BlogPost

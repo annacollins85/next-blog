@@ -1,12 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+import { RICH_TEXT_PROP_TYPES } from '../../constants/prop-types'
+
 import DropCap from '../drop-cap'
 import MiscHtml from '../misc-html'
 
 import { BlogPostContentContainer } from './styled-components'
 
 const componentMap = {
+  // Here we would have all the custom rich text entry types,
+  // in this case only one but we can create as many as needed
   dropCapParagraph: DropCap,
 }
 
@@ -26,7 +30,7 @@ const BlogPostContent = ({ content, color }) => {
 }
 
 BlogPostContent.propTypes = {
-  content: PropTypes.object.isRequired,
+  content: RICH_TEXT_PROP_TYPES.isRequired,
   color: PropTypes.string.isRequired,
 }
 

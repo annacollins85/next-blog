@@ -21,8 +21,7 @@ export const DropCapContainer = styled.div`
         font-size: 101px;
         line-height: 1;
         margin: -5px 10px -10px 0;
-        font-family: Apercu, -apple-system, BlinkMacSystemFont, Helvetica Neue,
-          sans-serif;
+        font-family: Helvetica Neue, sans-serif;
         font-weight: 700;
       }
     }

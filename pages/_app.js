@@ -23,10 +23,8 @@ class MyApp extends App {
         <Head>
           <title>Anna's Blog</title>
         </Head>
-        <Container>
-          <GlobalStyles />
-          <Component {...pageProps} />
-        </Container>
+        <GlobalStyles />
+        <Component {...pageProps} />
       </div>
     )
   }

@@ -31,7 +31,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: Apercu, -apple-system, BlinkMacSystemFont, Helvetica Neue, sans-serif;
+    font-family: Helvetica Neue, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     line-height: 1.2;

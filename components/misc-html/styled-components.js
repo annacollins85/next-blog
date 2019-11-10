@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 
+import { BREAKPOINTS } from '../../constants/design'
+
 import {
   BLOG_POST_COLUMN_WIDTH,
   BLOG_POST_SECTION_HORIZONTAL_PADDING,
@@ -18,7 +20,7 @@ export const StyledImage = styled.img`
   width: 100%;
   text-align: right;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: ${BREAKPOINTS.md}px) {
     max-width: ${BLOG_POST_COLUMN_WIDTH}px;
   }
 `
@@ -62,7 +64,7 @@ export const MiscHtmlContainer = styled.div`
   h3 {
     font-size: 22px;
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: ${BREAKPOINTS.sm}px) {
       font-size: 30px;
     }
   }
@@ -71,7 +73,7 @@ export const MiscHtmlContainer = styled.div`
     font-size: 26px;
     padding: ${BLOG_POST_SECTION_HORIZONTAL_PADDING}px;
 
-    @media screen and (min-width: 480px) {
+    @media screen and (min-width: ${BREAKPOINTS.sm}px) {
       font-size: 36px;
     }
   }
