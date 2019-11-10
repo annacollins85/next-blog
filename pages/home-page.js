@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 
+import { Element } from 'react-scroll'
+
 import NotFound from '../components/not-found'
 import HomeHero from '../components/home-hero'
 import BlogPostsSection from '../components/blog-posts-section'
@@ -21,7 +23,9 @@ class Home extends Component {
     return (
       <div>
         <HomeHero intro={intro} mainImage={mainImage} />
-        <BlogPostsSection blogPosts={blogPosts} />
+        <Element name="blogPostsSection">
+          <BlogPostsSection blogPosts={blogPosts} />
+        </Element>
       </div>
     )
   }

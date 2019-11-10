@@ -1,6 +1,7 @@
 import React from 'react'
 import { PropTypes } from 'prop-types'
 import Typewriter from 'typewriter-effect'
+import { Link } from 'react-scroll'
 
 import { IMAGE_PROP_TYPES } from '../../constants/prop-types'
 
@@ -9,10 +10,13 @@ import {
   ContentContainer,
   Avatar,
   IntroHeading,
+  ScrollArrowContainer,
+  ScrollArrow,
 } from './styled-components'
 
 const HomeHero = ({ intro, mainImage }) => (
   <HomeHeroBackground>
+    <div />
     <ContentContainer>
       <Avatar alt={mainImage.title} src={mainImage.url}></Avatar>
       <IntroHeading>
@@ -25,6 +29,11 @@ const HomeHero = ({ intro, mainImage }) => (
         />
       </IntroHeading>
     </ContentContainer>
+    <ScrollArrowContainer>
+      <Link to="blogPostsSection">
+        <ScrollArrow>&#8595;</ScrollArrow>
+      </Link>
+    </ScrollArrowContainer>
   </HomeHeroBackground>
 )
 

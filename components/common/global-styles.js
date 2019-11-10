@@ -20,6 +20,7 @@ const GlobalStyles = createGlobalStyle`
     height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
   }
 
   *,
